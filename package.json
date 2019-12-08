@@ -1,0 +1,17 @@
+{
+    "name": "@dfyu/refresh-node",
+    "version": "1.0.0",
+    "description": "",
+    "author": "dafu yu",
+    "bin": {
+        "refresh-node": "./index.js"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/RicholeYu/dfyu/refresh-node/issues"
+    },
+    "homepage": "https://github.com/RicholeYu/dfyu/refresh-node",
+    "dependencies": {
+      "arg": "^4.1.1"
+    }
+}
