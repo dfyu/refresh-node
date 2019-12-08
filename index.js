@@ -18,14 +18,15 @@ try {
 if (args || filename.length) {
     let argsd = args["-d"]
     filename.map(file => {
-        let filepath = path.resolve(__dirname, file)
-        let process = load(filepath)
-        fs.watchFile(filepath, () => process.refresh())
-        if (argsd) {
-            let filepath = path.resolve(__dirname, argsd)
-            fs.watch(filepath, () => process.refresh())
-        }
+        let filepath = resolve(file)
+        let childProcess = load(filepath)
+        fs.watchFile(filepath, childProcess.refresh)
+        argsd && fs.watch(resolve(argsd), childProcess.refresh)
     })
+}
+
+function resolve (file) {
+    return path.resolve(process.cwd(), file)
 }
 
 function load (filename) {
