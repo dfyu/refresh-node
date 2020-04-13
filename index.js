@@ -3,6 +3,8 @@ const fs = require("fs")
 const arg = require("arg")
 const path = require("path")
 const child_process = require("child_process")
+const notifier = require("node-notifier")
+
 let args
 let filename
 try {
@@ -35,7 +37,7 @@ function load (filename) {
         refresh: () => {
             process.kill("SIGKILL")
             process = child_process.fork(filename)
-            console.log("refresh")
+            notifier.notify("node进程已重启")
         }
     }
 }
