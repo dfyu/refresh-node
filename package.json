@@ -13,6 +13,6 @@
     "homepage": "https://github.com/RicholeYu/dfyu/refresh-node",
     "dependencies": {
         "arg": "^4.1.1",
-        "node-notifier": "^7.0.0"
+        "node-notifier": "^8.0.1"
     }
 }
